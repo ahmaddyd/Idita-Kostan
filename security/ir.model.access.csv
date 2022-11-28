@@ -1,4 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_idita_kamar_kostan,idita.kamar_kostan,model_idita_kamar_kostan,base.group_user,1,1,1,1
 access_idita_order_kostan,idita.order_kostan,model_idita_order_kostan,base.group_user,1,1,1,1
-access_idita_detail_order_kostan,idita.detail_order_kostan,model_idita_detail_order_,kostanbase.group_user,1,1,1,1
+access_idita_detail_order_kostan,idita.detail_order_kostan,model_idita_detail_order_kostan,base.group_user,1,1,1,1

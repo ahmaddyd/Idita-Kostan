@@ -30,7 +30,8 @@ class OrderHotel(models.Model):
     @api.model
     def _compute_jumlah_harga(self):
         for record in self:
-            total = sum(self.env['hotel.detailorder'].search([('order_ids', '=', record.id)]).mapped('total_harga'))
+            total = sum(
+                self.env['idita.detail_order_kostan'].search([('order_ids', '=', record.id)]).mapped('total_harga'))
             record.jumlah_harga = total
 
     tagihan = fields.Integer(compute='_compute_tagihan', string='Total Tagihan')
@@ -84,6 +85,7 @@ class DetailOrder(models.Model):
 
     name = fields.Char(string='Kode Order')
     models_id = fields.Many2one('idita.kamar_kostan', string='Tipe Kamar Kostan')
+    order_ids = fields.One2many(comodel_name='idita.order_kostan', inverse_name='name', string='Order Ruangan')
     jumlah_kamar = fields.Integer(string='Jumlah Kamar', default=1)
     harga = fields.Integer(compute='_compute_harga_kamar', string='Harga per bulan')
     total_harga = fields.Integer(compute='_compute_total_harga', string='Total Harga')
