@@ -9,7 +9,7 @@
             <field name="context">{'default_state':'cancel'}</field>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">
-                    Silakan Order Kamar Kostan
+                    Meng-cancel Order Kamar Kostan
                 </p>
             </field>
         </record>
@@ -17,5 +17,4 @@
 
     <menuitem id="action_cancel_menu_act_id" name="Cancel Order Kamar Kostan" action="action_cancel_windows"
               parent="service_kostan_menu" sequence="12"/>
-
 </odoo>

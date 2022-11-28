@@ -20,13 +20,12 @@
             <field name="context">{'default_penyewa':True}</field>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">
-                    Create your firts Custommer
+                    Silakan isi nama penyewa kostan
                 </p>
             </field>
         </record>
-
     </data>
+
     <menuitem id="action_penyewa_menu_act" name="Penyewa" action="action_penyewa" parent="kostan_contact_menu_categ"
               sequence="10"/>
-
 </odoo>

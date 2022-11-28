@@ -9,13 +9,12 @@
             <field name="context">{'default_state':'not_confirm'}</field>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">
-                    Silahkan Order Kamar Kostan
+                    Silakan pesan Kamar Kosan kembali jika ditolak
                 </p>
             </field>
         </record>
     </data>
 
-    <menuitem id="action_no_confirm_menu_act_id" name="Orderan ditolak" action="action_no_confirm"
+    <menuitem id="action_no_confirm_menu_act_id" name="Order Kamar Kosan Ditolak" action="action_no_confirm"
               parent="service_kostan_menu" sequence="13"/>
-
 </odoo>

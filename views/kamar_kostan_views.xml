@@ -18,12 +18,13 @@
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">
-                    Silahkan pilih Tipe Kamar Kostan
+                    Silakan pilih Tipe Kamar Kostan
                 </p>
             </field>
         </record>
 
     </data>
+
     <menuitem id="kamar_kostan_menu_act_id" name="Tipe Kamar" action="kamar_kostan_action" parent="idita_kostan_root"
               sequence="13"/>
 </odoo>

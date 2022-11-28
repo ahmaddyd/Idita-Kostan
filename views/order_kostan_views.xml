@@ -33,7 +33,7 @@
                     </header>
 
                     <sheet>
-                        <group string="Order Kamar Kostan">
+                        <group string="Order Hotel">
                             <field name="name"/>
                             <field name="tanggal_masuk_kostan"/>
                             <field name="tanggal_keluar_kostan"/>
@@ -41,16 +41,15 @@
                         </group>
 
                         <notebook>
-                            <page name="detail_order" string="Detail Order">
+                            <page name="detail_order" string="DETAIL ORDER">
                                 <field name="detailorder_ids" widget="section_and_note_one2many" mode="tree,kanban">
                                     <tree editable="buttom">
-                                        <field name="models_id"/>
+                                        <field name="tipe_kamar_id"/>
                                         <field name="jumlah_kamar"/>
                                         <field name="harga" widget="monetary"/>
                                         <field name="total_harga" widget="monetary"/>
                                     </tree>
                                 </field>
-
                                 <group name="note_group" col="6" class="mt-2 mt-md-0">
                                     <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
                                         <field name="jumlah_harga" widget="monetary"/>
@@ -61,7 +60,6 @@
                                         <field name="tagihan" nolabel="1" class="oe_subtotal_footer_separator"
                                                widget="monetary"/>
                                     </group>
-
                                     <div class="oe_clear"/>
                                 </group>
                             </page>
@@ -84,7 +82,7 @@
             <field name="domain">[('state','!=','done'),('state','!=','cancel'),('state','!=','not_confirm')]</field>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">
-                    Silahkan Order Kamar Kostan IDITA
+                    Silakan Order Kamar Kostan IDITA
                 </p>
             </field>
         </record>
