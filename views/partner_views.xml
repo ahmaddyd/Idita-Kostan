@@ -1,52 +1,32 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="res_partner_view_id" model="ir.ui.view">
-            <field name="name">res.partner.inherit.view.tree</field>
-            <field name="model">res.partner</field>
-            <field name="inherit_id" ref="base.view_partner_tree"/>
-            <field name="arch" type="xml">
-                <field name="category_id" position="replace"/>
-            </field>
-        </record>
-
-        <record id="inherit_res_partner_form" model="ir.ui.view">
-            <field name="name">inherit_res_partner_form</field>
+        <record id="inherit_res_partner_view_form" model="ir.ui.view">
+            <field name="name">res.partner.inherit.view.form</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
-                <field name="parent_id" position="after">
-                    <field name="is_pegawainya"/>
-                    <field name="is_customernya"/>
+                <field name="vat" position="after">
+                    <field name="penyewa"/>
                 </field>
             </field>
         </record>
 
-        <record id="res_partner_inherit_search" model="ir.ui.view">
-            <field name="name">res.partner.inherit.view.search</field>
-            <field name="model">res.partner</field>
-            <field name="inherit_id" ref="base.view_res_partner_filter"/>
-            <field name="arch" type="xml">
-                <field name="parent_id" position="after">
-                    <filter string="Penyewa" name="penyewanya" domain="[('is_customernya', '=', True)]"/>
-                    <filter string="Pegawai" name="pegawainya" domain="[('is_pegawainya', '=', True)]"/>
-                </field>
-            </field>
-        </record>
-
-        <record id="penyewa_kostan_action_window" model="ir.actions.act_window">
-            <field name="name">Penyewa Kostan</field>
-            <field name="type">ir.actions.act_window</field>
+        <record id="action_penyewa" model="ir.actions.act_window">
+            <field name="name">Penyewa Kamar Kosan</field>
             <field name="res_model">res.partner</field>
-            <field name="context">{
-                'search_default_customernya':1,
-                'default_is_customernya':True,
-                }
-            </field>
             <field name="view_mode">tree,form</field>
+            <field name="domain">[('penyewa','=',True)]</field>
+            <field name="context">{'default_penyewa':True}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create your firts Custommer
+                </p>
+            </field>
         </record>
 
-        <menuitem id="laundry_contact_menu_act" name="Penyewa" parent="status_kostan_menu"
-                  action="penyewa_kostan_action_window" sequence="10"/>
     </data>
+    <menuitem id="action_penyewa_menu_act" name="Penyewa" action="action_penyewa" parent="kostan_contact_menu_categ"
+              sequence="10"/>
+
 </odoo>

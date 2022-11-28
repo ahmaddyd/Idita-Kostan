@@ -20,7 +20,7 @@
     'application': True,
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'mail'],
 
     # always loaded
     'data': [
@@ -28,9 +28,9 @@
         'views/menu.xml',
         'views/order_kostan_views.xml',
         'views/action_order_kostan_views.xml',
+        'views/action_cancel_kostan_views.xml',
         'views/action_no_confirm_kostan_views.xml',
         'views/partner_views.xml',
-        'views/pegawai_kostan_views.xml',
         'views/kamar_kostan_views.xml',
         'views/action_confirm_kostan_views.xml',
         'views/views.xml',

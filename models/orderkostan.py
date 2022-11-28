@@ -7,7 +7,7 @@ from odoo.exceptions import ValidationError
 class OrderHotel(models.Model):
     _name = 'idita.order_kostan'
     _inherit = ["mail.thread", "mail.activity.mixin"]
-    _description = 'Order Kostan'
+    _description = 'Order Kamar Kostan'
 
     name = fields.Many2one('res.partner', string='Nama Penyewa', required=True, domain="[('is_customernya','=',True)]")
     tanggal_masuk_kostan = fields.Date(string='Tanggal Masuk Kostan', default=fields.Datetime.now, required=True)
@@ -64,9 +64,9 @@ class OrderHotel(models.Model):
         while code:
             random_code = random.sample(range(1000, 1999), 1)
             code_random = "CST" + str(random_code[0])
-            search_code = self.env['idita.order_kostan'].search([('no_confirm', '=', code_random)])
+            search_code = self.env['idita.order_kostan'].search([('kode_konfirmasi', '=', code_random)])
             if len(search_code) < 1:
-                self.no_confirm = code_random
+                self.kode_konfirmasi = code_random
                 break
 
     def action_cancel(self):
@@ -85,7 +85,7 @@ class DetailOrder(models.Model):
 
     name = fields.Char(string='Kode Order')
     models_id = fields.Many2one('idita.kamar_kostan', string='Tipe Kamar Kostan')
-    order_ids = fields.One2many(comodel_name='idita.order_kostan', inverse_name='name', string='Order Ruangan')
+    order_ids = fields.Many2one(comodel_name='idita.order_kostan', string='Order Ruangan')
     jumlah_kamar = fields.Integer(string='Jumlah Kamar', default=1)
     harga = fields.Integer(compute='_compute_harga_kamar', string='Harga per bulan')
     total_harga = fields.Integer(compute='_compute_total_harga', string='Total Harga')

@@ -4,5 +4,9 @@
         <menuitem id="idita_kostan_root" name="IDITA KOSTAN" sequence="10"/>
         <menuitem id="service_kostan_menu" name="Service Kamar" parent="idita_kostan_root" sequence="10"/>
         <menuitem id="status_kostan_menu" name="Status Kamar" parent="idita_kostan_root" sequence="11"/>
+        <menuitem id="kostan_contact_menu_categ"
+                  name="Kontak"
+                  parent="idita_kostan_root"
+                  sequence="11"/>
     </data>
 </odoo>

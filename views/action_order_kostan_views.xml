@@ -15,6 +15,6 @@
         </record>
     </data>
 
-    <menuitem id="action_order_kostan_menu_act_id" name="Order Kostan" action="action_order_kostan"
+    <menuitem id="action_order_kostan_menu_act_id" name="Order Kamar Kostan" action="action_order_kostan"
               parent="service_kostan_menu" sequence="11"/>
 </odoo>
