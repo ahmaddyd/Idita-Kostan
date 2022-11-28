@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <record id="inherit_res_partner_form" model="ir.ui.view">
+            <field name="name">inherit_res_partner_form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="vat" position="after">
+                    <field name="is_pegawainya"/>
+                    <field name="is_customernya"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="res_partner_inherit_search" model="ir.ui.view">
+            <field name="name">res.partner.inherit.view.search</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <field name="parent_id" position="after">
+                    <filter string="Penyewa" name="penyewanya" domain="[('is_customernya', '=', True)]"/>
+                    <filter string="Pegawai" name="pegawainya" domain="[('is_pegawainya', '=', True)]"/>
+                </field>
+            </field>
+        </record>
+
+        <!-- res.partner action window -->
+        <record id="pegawai_action_window" model="ir.actions.act_window">
+            <field name="name">Pegawai</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="context">{
+                'search_default_pegawainya':1,
+                'default_is_pegawainya':True,
+                }
+            </field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="pegawai_kostan_menu_act" name="Pegawai" parent="status_kostan_menu" action="pegawai_action_window"
+                  sequence="10"/>
+    </data>
+</odoo>

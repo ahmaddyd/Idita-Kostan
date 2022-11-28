@@ -27,6 +27,8 @@
         'security/ir.model.access.csv',
         'views/menu.xml',
         'views/kamar_kostan_views.xml',
+        'views/partner_views.xml',
+        'views/pegawai_kostan_views.xml',
         'views/views.xml',
         'views/templates.xml'
     ],
