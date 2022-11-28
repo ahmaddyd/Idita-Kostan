@@ -29,6 +29,7 @@
         'views/kamar_kostan_views.xml',
         'views/partner_views.xml',
         'views/pegawai_kostan_views.xml',
+        'views/order_kostan_views.xml',
         'views/views.xml',
         'views/templates.xml'
     ],
