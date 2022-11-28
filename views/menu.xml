@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="idita_kostan_root" name="IDITA KOSTAN" sequence="10"/>
+        <menuitem id="service_kostan_menu" name="Service Kamar" parent="idita_kostan_root" sequence="10"/>
+        <menuitem id="status_kostan_menu" name="Status Kamar" parent="idita_kostan_root" sequence="11"/>
+    </data>
+</odoo>
