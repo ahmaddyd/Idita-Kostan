@@ -63,11 +63,11 @@ class OrderHotel(models.Model):
         self.state = 'done'
         code = True
         while code:
-            rand_code = random.sample(range(1000, 1999), 1)
-            mycode = "CUST" + str(rand_code[0])
-            search_code = self.env['idita.order_kostan'].search([('kode_konfirmasi', '=', mycode)])
+            random_sample = random.sample(range(1000, 1999), 1)
+            code_random = "CUST" + str(random_sample[0])
+            search_code = self.env['idita.order_kostan'].search([('kode_konfirmasi', '=', code_random)])
             if len(search_code) < 1:
-                self.kode_konfirmasi = mycode
+                self.kode_konfirmasi = code_random
                 break
 
     def action_not_confirm(self):
