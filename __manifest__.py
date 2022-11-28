@@ -26,10 +26,13 @@
     'data': [
         'security/ir.model.access.csv',
         'views/menu.xml',
-        'views/kamar_kostan_views.xml',
-        'views/partner_views.xml',
-        'views/pegawai_kostan_views.xml',
         'views/order_kostan_views.xml',
+        'views/action_order_kostan_views.xml',
+        'views/action_no_confirm_kostan_views.xml',
+        'views/partner_views.xml',
+        'views/kamar_kostan_views.xml',
+        'views/action_confirm_kostan_views.xml',
+        'views/pegawai_kostan_views.xml',
         'views/views.xml',
         'views/templates.xml'
     ],

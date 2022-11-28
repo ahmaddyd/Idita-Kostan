@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_order_kostan" model="ir.actions.act_window">
+            <field name="name">Order Kostan</field>
+            <field name="res_model">idita.order_kostan</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state','=','done')]</field>
+            <field name="context">{'default_state':'done'}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Silahkan Order Kostan
+                </p>
+            </field>
+        </record>
+    </data>
+
+    <menuitem id="action_order_kostan_menu_act_id" name="Order Kostan" action="action_order_kostan"
+              parent="service_kostan_menu" sequence="11"/>
+</odoo>

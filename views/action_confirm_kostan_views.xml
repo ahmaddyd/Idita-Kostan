@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_confirm_view_tree" model="ir.ui.view">
+            <field name="name">Konfirmasi Kostan Tree</field>
+            <field name="model">idita.order_kostan</field>
+            <field name="arch" type="xml">
+                <tree string="Konfirmasi" multi_edit="1" sample="1">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_confirm_view_form" model="ir.ui.view">
+            <field name="name">Form Konfirmasi Kamar Kostan</field>
+            <field name="model">idita.order_kostan</field>
+            <field name="arch" type="xml">
+                <form string="Order">
+                    <header>
+                        <button id="button_done" string="Konfirmasi" name="action_done" type="object" states="pay"
+                                class="btn-primary"/>
+                        <button id="button_not_confirm" string="Ditolak" name="action_not_confirm" type="object"
+                                states="pay" class="btn-danger"/>
+                        <field name="state" widget="statusbar" statusbar_visible="pay"/>
+                    </header>
+
+                    <sheet>
+                        <group string="Order Kamar Kostan">
+                            <field name="name"/>
+                            <field name="tanggal_masuk_kostan"/>
+                            <field name="tanggal_keluar_kostan"/>
+                            <field name="kode_konfirmasi"/>
+                        </group>
+                        <notebook>
+
+                            <page name="detail_order" string="Detail Order">
+                                <field name="detailorder_ids" widget="section_and_note_one2many" mode="tree,kanban">
+                                    <tree editable="buttom">
+                                        <field name="models_id"/>
+                                        <field name="harga" widget="monetary"/>
+                                    </tree>
+                                </field>
+
+                                <group name="note_group" col="6" class="mt-2 mt-md-0">
+                                    <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+                                        <field name="jumlah_harga" widget="monetary"/>
+                                        <field name="jumlah_hari"/>
+                                        <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                            <label for="tagihan"/>
+                                        </div>
+
+                                        <field name="tagihan" nolabel="1" class="oe_subtotal_footer_separator"
+                                               widget="monetary"/>
+                                    </group>
+                                    <div class="oe_clear"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_confirm_action" model="ir.actions.act_window">
+            <field name="name">Konfirmasi Hotel</field>
+            <field name="res_model">idita.order_kostan</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state','=','pay')]</field>
+            <field name="context">{'default_state':'pay'}</field>
+            <field name="view_ids"
+                   eval="[(5,0,0),
+                    (0, 0, {'sequence': 3, 'view_mode': 'form', 'view_id': ref('iditakostan.action_confirm_view_form')}),
+                    (0, 0, {'sequence': 2, 'view_mode': 'tree', 'view_id': ref('iditakostan.action_confirm_view_tree')})
+                ]"
+            />
+
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Silahkan Order Kamar Kostan
+                </p>
+            </field>
+        </record>
+    </data>
+
+    <menuitem id="action_confirm_menu_act_id" name="Confirm" action="action_confirm_action" parent="idita_kostan_root"
+              sequence="14"/>
+
+</odoo>
