@@ -33,8 +33,8 @@
         'views/partner_views.xml',
         'views/kamar_kostan_views.xml',
         'views/action_confirm_kostan_views.xml',
-        'views/views.xml',
-        'views/templates.xml'
+        'report/report.xml',
+        'report/penyewa_order_kostan_report.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
