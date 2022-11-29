@@ -13,7 +13,7 @@
                         <h2>Penyewa Kamar Kostan</h2>
                     </center>
                     <div class="container">
-                        <h3>
+                        <t>
                             <div class="row">
                                 Nama Penyewa Kostan :
                                 <span t-field="o.name"/>
@@ -33,57 +33,65 @@
                                 Kode Konfirmasi :
                                 <span t-field="o.kode_konfirmasi"/>
                             </div>
-                        </h3>
+                        </t>
                     </div>
 
-                    <h4>
-                        <div class="row">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>Tipe Kamar</th>
-                                        <th>Jumlah Kamar Kostan</th>
-                                        <th>Harga Per Bulan</th>
-                                        <th>Total Harga</th>
-                                    </tr>
-                                </thead>
-                                <t t-foreach="o.detailorder_ids" t-as="k">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <span t-esc="k.tipe_kamar_id.name"/>
-                                            </td>
-                                            <td>
-                                                <span t-esc="k.jumlah_kamar"/>
-                                            </td>
-                                            <td>
-                                                <span t-esc="k.harga"/>
-                                            </td>
-                                            <td>
-                                                <span t-esc="k.total_harga"/>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </t>
-                            </table>
-                        </div>
-                    </h4>
+                    <table class="table table-bordered mt-4">
+                        <thead style="background-color:#000;color:white;font-weight: bold;font-weight: bold;">
+                            <tr>
+                                <td class="text-center">Tipe Kamar</td>
+                                <td class="text-center">Jumlah Kamar Kostan</td>
+                                <td class="text-center">Harga Per bulan</td>
+                                <td class="text-center">Total Harga</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <t t-foreach="o.detailorder_ids" t-as="detailorder">
+                                <tr>
+                                    <td class="text-center">
+                                        <t t-esc="detailorder.tipe_kamar_id.name"/>
+                                    </td>
+
+                                    <td class="text-center">
+                                        <t t-esc="detailorder.jumlah_kamar"/>
+                                    </td>
+
+                                    <td class="text-center">
+                                        <t t-esc="detailorder.harga"/>
+                                    </td>
+
+                                    <td class="text-center">
+                                        <t t-esc="detailorder.total_harga"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
 
                     <div class="container">
-                        <h3>
+                        <t>
                             <div class="row">
-                                Total Harga :
-                                <span t-field="o.jumlah_harga"/>
+                                <div class="col text-right">
+                                    Total Harga :
+                                    <span t-field="o.jumlah_harga"/>
+                                </div>
                             </div>
+
                             <div class="row">
-                                Total Hari :
-                                <span t-field="o.jumlah_hari"/>
+                                <div class="col text-right">
+                                    Total Hari :
+                                    <span t-field="o.jumlah_hari"/>
+                                </div>
                             </div>
+
                             <div class="row">
-                                Total Tagihan :
-                                <span t-field="o.tagihan"/>
+                                <div class="col text-right">
+                                    Total Tagihan :
+                                    <span t-field="o.tagihan"/>
+                                </div>
                             </div>
-                        </h3>
+                        </t>
                     </div>
                 </div>
             </t>
