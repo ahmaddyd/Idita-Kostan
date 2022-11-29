@@ -12,7 +12,7 @@ IditaKostan merupakan sistem berbasis ERP menggunakan Odoo Framework yang melaya
 
 ## Features
 
-- 
+- Printout Report Order Penyewa Kamar Kostan
 
 ## Tech
 - [Odoo](https://nightly.odoo.com/) - Using an Odoo nightly repository, you will be able to install and upgrade Odoo with the help of your traditional package manager (apt or yum).
