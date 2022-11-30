@@ -36,7 +36,7 @@
                             <page name="detail_order" string="DETAIL ORDER">
                                 <field name="detailorder_ids" widget="section_and_note_one2many" mode="tree,kanban">
                                     <tree editable="buttom">
-                                        <field name="tipe_kamar_id"/>
+                                        <field name="type_kamar_id"/>
                                         <field name="harga" widget="monetary"/>
                                     </tree>
                                 </field>
