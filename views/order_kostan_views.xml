@@ -37,7 +37,7 @@
                             <field name="name"/>
                             <field name="tanggal_masuk_kostan"/>
                             <field name="tanggal_keluar_kostan"/>
-                            <field name="code_konfirmasi"/>
+                            <field name="kode_konfirmasi"/>
                         </group>
 
                         <notebook>
