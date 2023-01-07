@@ -73,8 +73,8 @@
             <field name="context">{'default_state':'pay'}</field>
             <field name="view_ids"
                    eval="[(5,0,0),
-                    (0, 0, {'sequence': 3, 'view_mode': 'form', 'view_id': ref('iditakostan.action_confirm_view_form')}),
-                    (0, 0, {'sequence': 2, 'view_mode': 'tree', 'view_id': ref('iditakostan.action_confirm_view_tree')})
+                    (0, 0, {'sequence': 3, 'view_mode': 'form', 'view_id': ref('Idita-Kostan.action_confirm_view_form')}),
+                    (0, 0, {'sequence': 2, 'view_mode': 'tree', 'view_id': ref('Idita-Kostan.action_confirm_view_tree')})
                 ]"
             />
             <field name="help" type="html">

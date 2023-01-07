@@ -5,7 +5,7 @@
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
                     <div style="margin-top:150px">
-                        <t t-call="iditakostan.report_idita_kostan_order" t-lang="o.name.lang"/>
+                        <t t-call="Idita-Kostan.report_idita_kostan_order" t-lang="o.name.lang"/>
                     </div>
                 </t>
             </t>
@@ -15,8 +15,8 @@
             <field name="name">Idita Kostan Invoice</field>
             <field name="model">idita.order_kostan</field>
             <field name="report_type">qweb-pdf</field>
-            <field name="report_name">iditakostan.report_kostan_order</field>
-            <field name="report_file">iditakostan.report_kostan_order</field>
+            <field name="report_name">Idita-Kostan.report_kostan_order</field>
+            <field name="report_file">Idita-Kostan.report_kostan_order</field>
             <field name="print_report_name">'Order - %s' % (object.kode_konfirmasi)</field>
             <field name="binding_model_id" ref="model_idita_order_kostan"/>
             <field name="binding_type">report</field>
